@@ -5,7 +5,7 @@ import HomeScreen from '../../Screens/HomeScreen/HomeScreen';
 import Settings from '../../Screens/Settings/Settings'
 import ProfileScreen from '../../Screens/ProfileScreen/ProfileScreen'
 import Ionicons from "react-native-vector-icons/Ionicons";
-
+import Chat from '../../Screens/Chat/ChatScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -20,7 +20,10 @@ export default function TabNavigation() {
           if (route.name === "Profile") {
             iconName = focused ? "people" : "people-outline";
           }
-          if (route.name === "Category") {
+          if (route.name === "Messages") {
+            iconName = focused ? "chatbubble" : "chatbubble-outline";
+          }
+          if (route.name === "Settings") {
             iconName = focused ? "settings" : "settings-outline";
           }
           if (route.name === "Home") {
@@ -28,8 +31,8 @@ export default function TabNavigation() {
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "black",
-        tabBarInactiveTintColor: "gray",
+        tabBarActiveTintColor: "pink",
+        tabBarInactiveTintColor: "grey",
       })}
     >
       <Tab.Screen
@@ -42,6 +45,14 @@ export default function TabNavigation() {
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
+        options={{
+          headerShown: false,
+          headerTitleStyle: { fontSize: 16 },
+        }}
+      />
+      <Tab.Screen
+        name="Messages"
+        component={Chat}
         options={{
           headerShown: false,
           headerTitleStyle: { fontSize: 16 },

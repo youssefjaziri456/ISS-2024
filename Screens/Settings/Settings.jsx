@@ -19,7 +19,7 @@ export default function Settings() {
   });
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={styles.container}>
         <View style={styles.profile}>
           <TouchableOpacity
@@ -40,7 +40,7 @@ export default function Settings() {
                 }}>
                 <View style={styles.profileAction}>
                   <FeatherIcon
-                    color="#fff"
+                    color="pink"
                     name="edit-3"
                     size={15} />
                 </View>
@@ -66,8 +66,8 @@ export default function Settings() {
                 // handle onPress
               }}
               style={styles.row}>
-              <View style={[styles.rowIcon, { backgroundColor: '#fe9400' }]}>
-                <FeatherIcon color="#fff" name="globe" size={20} />
+              <View style={[styles.rowIcon, { backgroundColor: 'white' }]}>
+                <FeatherIcon color="pink" name="globe" size={20} />
               </View>
 
               <Text style={styles.rowLabel}>Language</Text>
@@ -75,21 +75,21 @@ export default function Settings() {
               <View style={styles.rowSpacer} />
 
               <FeatherIcon
-                color="#C6C6C6"
+                color="pink"
                 name="chevron-right"
                 size={20} />
             </TouchableOpacity>
 
             <View style={styles.row}>
-              <View style={[styles.rowIcon, { backgroundColor: '#007afe' }]}>
-                <FeatherIcon color="#fff" name="moon" size={20} />
+              <View style={[styles.rowIcon, { backgroundColor: 'white' }]}>
+                <FeatherIcon color="pink" name="moon" size={20} />
               </View>
 
               <Text style={styles.rowLabel}>Dark Mode</Text>
 
               <View style={styles.rowSpacer} />
 
-              <Switch
+              <Switch  trackColor={{false:'white',true:'pink'}}
                 onValueChange={darkMode => setForm({ ...form, darkMode })}
                 value={form.darkMode} />
             </View>
@@ -99,9 +99,9 @@ export default function Settings() {
                 // handle onPress
               }}
               style={styles.row}>
-              <View style={[styles.rowIcon, { backgroundColor: '#32c759' }]}>
+              <View style={[styles.rowIcon, { backgroundColor: 'white' }]}>
                 <FeatherIcon
-                  color="white"
+                  color="pink"
                   name="navigation"
                   size={20} />
               </View>
@@ -111,15 +111,15 @@ export default function Settings() {
               <View style={styles.rowSpacer} />
 
               <FeatherIcon
-                color="#C6C6C6"
+                color="pink"
                 name="chevron-right"
                 size={20} />
             </TouchableOpacity>
 
             <View style={styles.row}>
-              <View style={[styles.rowIcon, { backgroundColor: '#38C959' }]}>
+              <View style={[styles.rowIcon, { backgroundColor: 'white' }]}>
                 <FeatherIcon
-                  color="#fff"
+                  color="pink"
                   name="at-sign"
                   size={20} />
               </View>
@@ -128,7 +128,7 @@ export default function Settings() {
 
               <View style={styles.rowSpacer} />
 
-              <Switch
+              <Switch trackColor={{false:'white',true:'pink'}}
                 onValueChange={emailNotifications =>
                   setForm({ ...form, emailNotifications })
                 }
@@ -136,15 +136,15 @@ export default function Settings() {
             </View>
 
             <View style={styles.row}>
-              <View style={[styles.rowIcon, { backgroundColor: '#38C959' }]}>
-                <FeatherIcon color="#fff" name="bell" size={20} />
+              <View style={[styles.rowIcon, { backgroundColor: 'white' }]}>
+                <FeatherIcon color="pink" name="bell" size={20} />
               </View>
 
               <Text style={styles.rowLabel}>Push Notifications</Text>
 
               <View style={styles.rowSpacer} />
 
-              <Switch
+              <Switch trackColor={{false:'white',true:'pink'}}
                 onValueChange={pushNotifications =>
                   setForm({ ...form, pushNotifications })
                 }
@@ -160,8 +160,8 @@ export default function Settings() {
                 // handle onPress
               }}
               style={styles.row}>
-              <View style={[styles.rowIcon, { backgroundColor: '#8e8d91' }]}>
-                <FeatherIcon color="#fff" name="flag" size={20} />
+              <View style={[styles.rowIcon, { backgroundColor: 'white' }]}>
+                <FeatherIcon color="pink" name="flag" size={20} />
               </View>
 
               <Text style={styles.rowLabel}>Report Bug</Text>
@@ -169,7 +169,7 @@ export default function Settings() {
               <View style={styles.rowSpacer} />
 
               <FeatherIcon
-                color="#C6C6C6"
+                color="pink"
                 name="chevron-right"
                 size={20} />
             </TouchableOpacity>
@@ -179,8 +179,8 @@ export default function Settings() {
                 // handle onPress
               }}
               style={styles.row}>
-              <View style={[styles.rowIcon, { backgroundColor: '#007afe' }]}>
-                <FeatherIcon color="#fff" name="mail" size={20} />
+              <View style={[styles.rowIcon, { backgroundColor: 'white' }]}>
+                <FeatherIcon color="pink" name="mail" size={20} />
               </View>
 
               <Text style={styles.rowLabel}>Contact Us</Text>
@@ -188,7 +188,7 @@ export default function Settings() {
               <View style={styles.rowSpacer} />
 
               <FeatherIcon
-                color="#C6C6C6"
+                color="pink"
                 name="chevron-right"
                 size={20} />
             </TouchableOpacity>
@@ -198,8 +198,8 @@ export default function Settings() {
                 // handle onPress
               }}
               style={styles.row}>
-              <View style={[styles.rowIcon, { backgroundColor: '#32c759' }]}>
-                <FeatherIcon color="#fff" name="star" size={20} />
+              <View style={[styles.rowIcon, { backgroundColor: 'white' }]}>
+                <FeatherIcon color="pink" name="star" size={20} />
               </View>
 
               <Text style={styles.rowLabel}>Rate in App Store</Text>
@@ -207,7 +207,7 @@ export default function Settings() {
               <View style={styles.rowSpacer} />
 
               <FeatherIcon
-                color="#C6C6C6"
+                color="pink"
                 name="chevron-right"
                 size={20} />
             </TouchableOpacity>
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
   /** Profile */
   profile: {
     padding: 24,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
@@ -250,13 +250,13 @@ const styles = StyleSheet.create({
     width: 28,
     height: 28,
     borderRadius: 9999,
-    backgroundColor: '#007bff',
+    backgroundColor: 'white',
   },
   profileName: {
     marginTop: 20,
     fontSize: 19,
     fontWeight: '600',
-    color: '#414d63',
+    color: 'black',
     textAlign: 'center',
   },
   profileAddress: {
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     fontSize: 12,
     fontWeight: '600',
-    color: '#9e9e9e',
+    color: 'pink',
     textTransform: 'uppercase',
     letterSpacing: 1.1,
   },

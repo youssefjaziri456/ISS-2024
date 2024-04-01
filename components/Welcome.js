@@ -1,22 +1,22 @@
 import { View, Text, Pressable, Image } from 'react-native'
 import React from 'react'
 import { LinearGradient } from "expo-linear-gradient";
+import Button from './Button';
 import COLORS from '../constants/colors';
-import Button from '../components/Button';
-
 const Welcome = ({ navigation }) => {
 
     return (
-        <LinearGradient
+
+        <View
             style={{
-                flex: 1
+                flex: 1,
+                backgroundColor:COLORS.pink
             }}
-            colors={[COLORS.secondary, COLORS.primary]}
         >
             <View style={{ flex: 1 }}>
                 <View>
                     <Image
-                        source={require("../assets/icon.png")}
+                        source={require("../assets/paw.png")}
                         style={{
                             height: 100,
                             width: 100,
@@ -32,7 +32,7 @@ const Welcome = ({ navigation }) => {
                     />
 
                     <Image
-                        source={require("../assets/icon.png")}
+                        source={require("../assets/paw.png")}
                         style={{
                             height: 100,
                             width: 100,
@@ -49,7 +49,7 @@ const Welcome = ({ navigation }) => {
                     />
 
                     <Image
-                        source={require("../assets/icon.png")}
+                        source={require("../assets/paw.png")}
                         style={{
                             width: 100,
                             height: 100,
@@ -66,7 +66,7 @@ const Welcome = ({ navigation }) => {
                     />
 
                     <Image
-                        source={require("../assets/icon.png")}
+                        source={require("../assets/paw.png")}
                         style={{
                             height: 200,
                             width: 200,
@@ -79,6 +79,19 @@ const Welcome = ({ navigation }) => {
                                 { translateY: 50 },
                                 { rotate: "-15deg" }
                             ]
+                        }}
+                    />
+                    <Image
+                        source={require("../assets/doggo.png")}
+                        style={{
+                            height: 100,
+                            width: 400,
+                            borderRadius: 80,
+                            resizeMode:"contain",
+                            position: "relative",
+                            top: 400,
+                            left: 140,
+
                         }}
                     />
                 </View>
@@ -107,15 +120,16 @@ const Welcome = ({ navigation }) => {
                             fontSize: 16,
                             color: COLORS.white,
                             marginVertical: 4
-                        }}>Connect with each other with chatting</Text>
+                        }}>Welcome to PawPaw! You are one click away </Text>
                         <Text style={{
                             fontSize: 16,
                             color: COLORS.white,
-                        }}>Calling, Enjoy Safe and private texting</Text>
+                        }}>To connect with compatible playmates for your beloved pets.</Text>
                     </View>
 
                     <Button
                         title="Join Now"
+                        
                         onPress={() => navigation.navigate("Signup")}
                         style={{
                             marginTop: 22,
@@ -146,8 +160,8 @@ const Welcome = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-        </LinearGradient>
+        </View>
     )
 }
 
-export default Welcome
+export default Welcome;

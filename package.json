@@ -9,15 +9,19 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-firebase/app": "^18.9.0",
+    "@react-native-firebase/auth": "^18.9.0",
+    "@react-navigation/bottom-tabs": "^6.5.19",
     "@react-navigation/native": "^6.1.10",
     "@react-navigation/native-stack": "^6.9.18",
     "@react-navigation/stack": "^6.3.21",
-    "expo": "~50.0.5",
+    "expo": "^50.0.7",
     "expo-checkbox": "^2.7.0",
-    "expo-linear-gradient": "^12.7.1",
+    "expo-linear-gradient": "^12.7.2",
     "expo-status-bar": "~1.11.1",
+    "firebase": "^10.8.0",
     "react": "18.2.0",
-    "react-native": "0.73.2"
+    "react-native": "^0.73.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

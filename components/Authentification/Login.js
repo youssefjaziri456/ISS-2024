@@ -5,11 +5,26 @@ import COLORS from '../../constants/colors';
 import { Ionicons } from "@expo/vector-icons";
 import Checkbox from "expo-checkbox"
 import Button from '../Button';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = ({ navigation }) => {
     const [isPasswordShown, setIsPasswordShown] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
-    
+    const [email,setEmail]=useState('');
+    const [password,setPassword]=useState('');
+    const authInstance = getAuth();
+
+    const handleLogin = () => {
+        signInWithEmailAndPassword(authInstance, email, password)
+          .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log('User logged in:', user.email);
+            //onLoginSuccess();
+            navigation.navigate("MAIN");
+          })
+          
+          .catch(error => alert(error.message));
+      };
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
             <View style={{ flex: 1, marginHorizontal: 22 }}>
@@ -53,6 +68,8 @@ const Login = ({ navigation }) => {
                             style={{
                                 width: "100%"
                             }}
+                            value={email} // bind the value to the email state
+                            onChangeText={(text) => setEmail(text)} // update the email state
                         />
                     </View>
                 </View>
@@ -81,6 +98,8 @@ const Login = ({ navigation }) => {
                             style={{
                                 width: "100%"
                             }}
+                            value={password} // bind the value to the password state
+                            onChangeText={(text) => setPassword(text)} // update the password state
                         />
 
                         <TouchableOpacity
@@ -116,13 +135,18 @@ const Login = ({ navigation }) => {
                     <Text>Remenber Me</Text>
                 </View>
 
-                <Button
+                <Button 
                     title="Login"
                     filled
                     style={{
                         marginTop: 18,
                         marginBottom: 4,
+                        
+                        
+                        
                     }}
+                    onPress={()=>{handleLogin()}}
+
                 />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 20 }}>
@@ -164,7 +188,7 @@ const Login = ({ navigation }) => {
                         }}
                     >
                         <Image
-                            source={require("../../assets/icon.png")}
+                            source={require("../../assets/facebook.png")}
                             style={{
                                 height: 36,
                                 width: 36,
@@ -191,7 +215,7 @@ const Login = ({ navigation }) => {
                         }}
                     >
                         <Image
-                            source={require("../../assets/icon.png")}
+                            source={require("../../assets/google.png")}
                             style={{
                                 height: 36,
                                 width: 36,
@@ -215,7 +239,7 @@ const Login = ({ navigation }) => {
                     >
                         <Text style={{
                             fontSize: 16,
-                            color: COLORS.primary,
+                            color: COLORS.pink,
                             fontWeight: "bold",
                             marginLeft: 6
                         }}>Register</Text>

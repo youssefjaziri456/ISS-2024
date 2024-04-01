@@ -3,10 +3,11 @@ import React from 'react'
 import COLORS from '../constants/colors'
 
 const Button = (props) => {
-    const filledBgColor = props.color || COLORS.primary;
+    const filledBgColor = props.color || COLORS.pink;
     const outlinedColor = COLORS.white;
     const bgColor = props.filled ? filledBgColor : outlinedColor;
     const textColor = props.filled ? COLORS.white : COLORS.primary;
+
 
     return (
         <TouchableOpacity
@@ -26,11 +27,12 @@ const styles = StyleSheet.create({
     button: {
         paddingBottom: 16,
         paddingVertical: 10,
-        borderColor: COLORS.primary,
+        borderColor: COLORS.pink,
         borderWidth: 2,
         borderRadius: 12,
         alignItems: 'center',
         justifyContent: 'center'
+
     }
 })
 export default Button

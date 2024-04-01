@@ -1,3 +1,10 @@
 {
-  "urlRandomness": "8DkquzA"
+  "urlRandomness": "8DkquzA",
+  "dev": true,
+  "minify": false,
+  "https": false,
+  "scheme": null,
+  "hostType": "tunnel",
+  "lanType": "ip",
+  "devClient": false
 }

@@ -7,6 +7,7 @@ import HomeScreen from './components/Screens/HomeScreen/HomeScreen'
 import Login from './components/Authentification/Login'
 import Signup from './components/Authentification/Signup'
 import Welcome from './components/Welcome'
+import DetailsScreen from './components/Screens/HomeScreen/DetailsScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -55,9 +56,11 @@ export default function App () {
                   headerShown: false
                 }}
               />
+              
             </Stack.Navigator>
           )}
         />
+         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
 
         <Stack.Screen name='MAIN' component={() => <TabNavigations />} />
       </Stack.Navigator>

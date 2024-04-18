@@ -8,8 +8,9 @@ import {
   Switch,
   Image
 } from 'react-native';
-import { useState } from 'react';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useState, useEffect } from 'react';
 
 export default function Settings() {
   const [form, setForm] = useState({
@@ -17,7 +18,20 @@ export default function Settings() {
     emailNotifications: true,
     pushNotifications: false,
   });
+  const [userEmail, setUserEmail] = useState('');
+  const authInstance = getAuth();
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(authInstance, (user) => {
+      if (user) {
+        setUserEmail(user.email);
+      } else {
+        // User is signed out
+        setUserEmail('');
+      }
+    });
+    return () => unsubscribe();
+  }, [authInstance]);
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={styles.container}>
@@ -30,7 +44,7 @@ export default function Settings() {
               <Image
                 alt=""
                 source={{
-                  uri: 'https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/activities-fun/10-great-small-dog-breeds/maltese-portrait.jpg',
+                  uri: 'https://militaryhealthinstitute.org/wp-content/uploads/sites/37/2021/08/blank-profile-picture-png.png',
                 }}
                 style={styles.profileAvatar} />
 
@@ -49,7 +63,7 @@ export default function Settings() {
           </TouchableOpacity>
 
           <View>
-            <Text style={styles.profileName}>Sissi Jaziri</Text>
+            <Text style={styles.profileName}>{userEmail}</Text>
 
             <Text style={styles.profileAddress}>
         Jardins Del Menzah 2

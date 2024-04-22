@@ -1,0 +1,35 @@
+{
+  "name": "iss-2024",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@react-native-firebase/app": "^18.9.0",
+    "@react-native-firebase/auth": "^18.9.0",
+    "@react-navigation/bottom-tabs": "^6.5.19",
+    "@react-navigation/native": "^6.1.10",
+    "@react-navigation/native-stack": "^6.9.18",
+    "@react-navigation/stack": "^6.3.21",
+    "axios": "^1.6.8",
+    "expo": "^50.0.7",
+    "expo-checkbox": "^2.7.0",
+    "expo-image-picker": "~14.7.1",
+    "expo-linear-gradient": "^12.7.2",
+    "expo-status-bar": "~1.11.1",
+    "firebase": "^10.8.0",
+    "react": "18.2.0",
+    "react-native": "^0.73.4",
+    "react-native-gifted-chat": "^2.4.0",
+    "react-native-tab-view": "^3.5.2",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}

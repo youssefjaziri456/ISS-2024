@@ -90,3 +90,11 @@ npx expo start
 ## 🐕 Why PAWPAW?
 
 Because every dog deserves to find their perfect playmate! Our app makes it easy and fun for dogs and their owners to build meaningful connections in their local community.
+
+## 🤝 Contributing
+
+We welcome contributions! See the [CONTRIBUTING](CONTRIBUTING.md) file for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -41,7 +41,7 @@ PAWPAW is a unique mobile application that helps dog owners find playmates and p
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/youssefjaziri456/ISS-2024.git
+git clone https://github.com/youssefjaziri/ISS-2024.git
 ```
 
 1. Install dependencies:
